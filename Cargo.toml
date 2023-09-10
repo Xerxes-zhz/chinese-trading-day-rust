@@ -8,4 +8,5 @@ edition = "2021"
 [dependencies]
 reqwest="0.11"
 [lib]
-path="src/chinese-trading-day"
+name  = "chinese_trading_day"
+path="src/chinese_trading_day.rs"
