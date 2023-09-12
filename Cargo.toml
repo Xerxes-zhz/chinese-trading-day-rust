@@ -7,6 +7,9 @@ edition = "2021"
 
 [dependencies]
 reqwest="0.11"
+chrono="0.4.30"
+serde = { version = "1.0", features =  ["derive"]}
+serde_yaml = "0.9"
 [lib]
 name  = "chinese_trading_day"
 path="src/chinese_trading_day.rs"
