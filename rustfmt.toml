@@ -1,0 +1,82 @@
+# 最大宽度，其他数组宽度等为这个宽度乘一个百分比例（见use_small_heuristics）
+max_width = 120
+
+# 二元运算符前置
+binop_separator = "Front"
+
+# same line expect where
+brace_style = 'SameLineWhere'
+
+# 控制流语句不换行
+combine_control_expr = true
+
+# 控制语句括号不换行
+control_brace_style="AlwaysSameLine"
+
+empty_item_single_line = true
+
+# 参数布局，多了垂直，少了不换行
+fn_params_layout = "Tall"
+
+# 单表达式函数单行表示
+fn_single_line = true
+
+# 强制多行分块，尤其match等对齐
+force_multiline_blocks = true
+
+# 格式化注释
+format_code_in_doc_comments = true
+
+# 格式化宏
+format_macro_matchers = true
+format_macro_bodies = true
+
+
+# 强制所有导入风格为垂直对齐
+imports_layout = "Vertical"
+
+indent_style = 'Block'
+
+# match 开头的表示或的竖线，有点类似switch case 的through
+match_arm_leading_pipes = 'Preserve'
+match_block_trailing_comma = true
+
+# import 合并模式 同级对齐全部合并
+imports_granularity = 'One'
+
+newline_style = 'Unix'
+
+# 最后一个参数是struct等block时是否换行
+overflow_delimited_expr = false
+
+remove_nested_parens = true
+
+# reorder
+reorder_impl_items = true
+reorder_imports = true
+reorder_modules = true
+
+# import 分组
+group_imports = 'StdExternalCrate'
+
+space_after_colon = true
+space_before_colon = false
+spaces_around_ranges = false
+
+# 结构体内部对齐
+struct_field_align_threshold = 30
+
+# 小结构体放一行
+struct_lit_single_line = true
+struct_lit_width = 30
+
+trailing_comma = 'Vertical'
+trailing_semicolon = true
+
+type_punctuation_density = 'Wide'
+
+unstable_features = true
+
+use_field_init_shorthand = true
+ 
+

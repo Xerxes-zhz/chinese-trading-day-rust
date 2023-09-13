@@ -5,6 +5,7 @@ mkShell {
     rustup
     openssl
     pkgconfig
+    rustfmt
     
   ];
 }
