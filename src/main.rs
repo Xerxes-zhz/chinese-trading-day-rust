@@ -49,26 +49,30 @@ impl CalendarInitializer {
                     let mut trading_order = prev.trading_order;
                     let weekday = (prev.weekday + 1u32) % 7;
                     fn one_if(num:u32,odd_or_even:OddEven) -> u32{
-                        if num % 2 == {if odd_or_even==Even{0}else{1}} {
+                        if num % 2 == {
+                            match odd_or_even {
+                            OddEven::Eve=>{0}
+                            OddEven::Odd=>{1}
+                        } {
                             1u32
                         } else {
                             0u32
                         }
                     }
                     if vocation.vocation.contains(&date) {
-                        working_order += one_if(working_order,Even) ;
-                        trading_order += one_if(trading_order) ;
+                        working_order += one_if(working_order,OddEven::Even) ;
+                        trading_order += one_if(trading_order,OddEven::Even) ;
                     } else {
                         if weekday==5 || weekday==6{
-                        trading_order += one_if_even(trading_order) ;
+                        trading_order += one_if(trading_order,OddEven::Even) ;
                             if vocation.additional_workday.contains(&date){
-                                working_order+=2u32;
+                                working_order += one_if(working_order,OddEven::Odd)+1u32;
                             }else{
-                                working_order+=one_if_even(working_order);
+                                working_order+=one_if(working_order,OddEven::Even);
                             }
                         }else{
-                            working_order += 2u32;
-                            trading_order += 2u32;
+                            working_order += one_if(working_order,OddEven::Odd)+1u32;
+                            trading_order += one_if(working_order,OddEven::Odd)+1u32;
                         }
                     }
 
