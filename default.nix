@@ -1,11 +1,15 @@
 {pkgs ? import <nixpkgs> {} }:
-with pkgs;
-mkShell {
-  buildInputs = [
-    rustup
+pkgs.mkShell {
+  buildInputs = with pkgs; [
+    # rust 
+    rustc
+    cargo 
+    rustfmt
+    rust-analyzer
+    clippy
     openssl
     pkgconfig
-    rustfmt
     
   ];
+  RUST_BACKTRACE = 1;
 }

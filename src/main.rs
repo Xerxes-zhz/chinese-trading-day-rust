@@ -51,9 +51,9 @@ impl CalendarInitializer {
                     fn one_if(num:u32,odd_or_even:OddEven) -> u32{
                         if num % 2 == {
                             match odd_or_even {
-                            OddEven::Eve=>{0}
+                            OddEven::Even=>{0}
                             OddEven::Odd=>{1}
-                        } {
+                        } }{
                             1u32
                         } else {
                             0u32
@@ -100,29 +100,6 @@ impl CalendarInitializer {
 
         }
 
-        // let working_day: Vec<(u32, NaiveDate)> = all_date
-        //     .clone()
-        //     .iter()
-        //     .filter(|(index, date)| {
-        //         !vocation.vocation.contains(date)
-        //             & (![5u32, 6u32].contains(&((index + start_weekday) % 7))
-        //                 | vocation.additional_workday.contains(date))
-        //     })
-        //     .cloned()
-        //     .collect();
-        // let trading_day: Vec<(u32, u32, NaiveDate)> = (0u32..)
-        //     .zip({
-        //         working_day
-        //             .clone()
-        //             .iter()
-        //             .filter(|(index, date)| ![5u32, 6u32].contains(&((index + start_weekday) % 7)))
-        //             .cloned()
-        //     })
-        //     .map(|(idx, (num, date))| (idx, num, date))
-        //     .collect();
-        // let working_day: Vec<(u32, u32, NaiveDate)> = (0u32..).zip(working_day.into_iter())
-        //     .map(|(idx, (num, date))| (idx, num, date))
-        //     .collect();
         Self {
             date: date_order,
             start_date,
